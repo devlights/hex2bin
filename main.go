@@ -4,8 +4,8 @@ import (
 	"flag"
 	"fmt"
 	"os"
-	"strconv"
-	"strings"
+
+	"github.com/devlights/gomy/convert"
 )
 
 func main() {
@@ -28,20 +28,12 @@ func run() int {
 		return 2
 	}
 
-	fmt.Printf("%s\t-->\t0b%b\n", v, b)
+	fmt.Printf("%s\t-->\t%s\n", v, b)
 
 	return 0
 }
 
-// Convert -- 指定された16進数文字列を2進数に変換します.
-func Convert(v string) (int64, error) {
-	if len(v) == 0 {
-		return 0, nil
-	}
-
-	if strings.HasPrefix(v, "0x") {
-		v = strings.Replace(v, "0x", "", 1)
-	}
-
-	return strconv.ParseInt(v, 16, 32)
+// Convert -- 指定された16進数文字列を2進数文字列に変換します.
+func Convert(v string) (string, error) {
+	return convert.Hex2Bin(v, "0b", 0)
 }

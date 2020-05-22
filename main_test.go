@@ -10,38 +10,45 @@ func TestConvert(t *testing.T) {
 			val string
 		}
 		testout struct {
-			result int64
+			result string
 		}
 		testcase struct {
-			in  testin
-			out testout
+			name string
+			in   testin
+			out  testout
 		}
 	)
 
 	cases := []testcase{
 		{
-			in:  testin{val: "0xFF"},
-			out: testout{result: 0b11111111},
+			name: "convert 0xFF",
+			in:   testin{val: "0xFF"},
+			out:  testout{result: "0b11111111"},
 		},
 		{
-			in:  testin{val: "0x08"},
-			out: testout{result: 0b1000},
+			name: "convert 0x08",
+			in:   testin{val: "0x08"},
+			out:  testout{result: "0b1000"},
 		},
 		{
-			in:  testin{val: "0x04"},
-			out: testout{result: 0b100},
+			name: "convert 0x04",
+			in:   testin{val: "0x04"},
+			out:  testout{result: "0b100"},
 		},
 		{
-			in:  testin{val: "0x02"},
-			out: testout{result: 0b10},
+			name: "convert 0x02",
+			in:   testin{val: "0x02"},
+			out:  testout{result: "0b10"},
 		},
 		{
-			in:  testin{val: "0x01"},
-			out: testout{result: 0b1},
+			name: "convert 0x01",
+			in:   testin{val: "0x01"},
+			out:  testout{result: "0b1"},
 		},
 		{
-			in:  testin{val: "0x0E"},
-			out: testout{result: 0b1110},
+			name: "convert 0x0E",
+			in:   testin{val: "0x0E"},
+			out:  testout{result: "0b1110"},
 		},
 	}
 
