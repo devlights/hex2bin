@@ -28,27 +28,27 @@ func TestConvert(t *testing.T) {
 		{
 			name: "convert 0x08",
 			in:   testin{val: "0x08"},
-			out:  testout{result: "1000"},
+			out:  testout{result: "00001000"},
 		},
 		{
 			name: "convert 0x04",
 			in:   testin{val: "0x04"},
-			out:  testout{result: "100"},
+			out:  testout{result: "00000100"},
 		},
 		{
 			name: "convert 0x02",
 			in:   testin{val: "0x02"},
-			out:  testout{result: "10"},
+			out:  testout{result: "00000010"},
 		},
 		{
 			name: "convert 0x01",
 			in:   testin{val: "0x01"},
-			out:  testout{result: "1"},
+			out:  testout{result: "00000001"},
 		},
 		{
 			name: "convert 0x0E",
 			in:   testin{val: "0x0E"},
-			out:  testout{result: "1110"},
+			out:  testout{result: "00001110"},
 		},
 	}
 

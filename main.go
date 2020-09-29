@@ -35,5 +35,5 @@ func run() int {
 
 // Convert -- 指定された16進数文字列を2進数文字列に変換します.
 func Convert(v string) (string, error) {
-	return convert.Hex2Bin(v, "", 0)
+	return convert.Hex2Bin(v, "", -1)
 }
